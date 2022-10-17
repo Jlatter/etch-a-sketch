@@ -13,8 +13,13 @@ function sketchsize(row, height){
 sketchsize(16,16);
 var gridItems = document.getElementsByClassName("grid-item");
 for(let i=0;i<gridItems.length;i++){
-    gridItems[i].addEventListener("mouseenter" ,(event)=> cool());
+    gridItems[i].setAttribute("id", "pixel"+i);
 }
-function cool(){
-    console.log("correct");
+for(let i=0; i<gridItems.length; i++){
+    document.getElementById("pixel" +i).addEventListener("mouseenter", event => cool(i));
+}
+function cool(e){
+    console.log("correct" + (e+1));
+    document.getElementById("pixel" + e).className ="transformed";
+    
 };
