@@ -3,9 +3,15 @@
     --grid-row:1;
     --grid-height:1;
 }
+.container{
+    display: flex;
+
+}
 #contain{
     display: grid;
-    grid-gap: 1em;
+   padding-left: 55em;
+   padding-right: 15em;
+   padding-top: 5em;
     grid-template-rows: repeat(var(--grid-row), 1fr);
     grid-template-columns: repeat(var(--grid-height), 1fr);
 }
@@ -19,4 +25,15 @@
 }
 .transformed{
     background-color: black;
+    padding: 1em;
+    border: 1px solid;
+    text-align: center;
+}
+.mains{
+    display: flex;
+    flex-direction: column
+}
+#option{
+width: 70px;
+height: 20px;
 }

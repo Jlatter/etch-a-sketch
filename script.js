@@ -6,7 +6,7 @@ function sketchsize(row, height){
     container.style.setProperty('--grid-height', height);
     for(let i =0; i<(row * height); i++){
         let cell = document.createElement("div");
-        cell.innerText = (i+1);
+        
         container.appendChild(cell).className = "grid-item";
     };
 };
@@ -20,6 +20,14 @@ for(let i=0; i<gridItems.length; i++){
 }
 function cool(e){
     console.log("correct" + (e+1));
-    document.getElementById("pixel" + e).className ="transformed";
+    document.getElementById("pixel" + e).className =" grid-item transformed";
     
 };
+const clear = document.getElementById("option");
+clear.addEventListener("click", event => cleared());
+function cleared(){
+    console.log("clicked");
+    for(let i=0; i<gridItems.length; i++){
+        document.getElementById("pixel"+i).classList.remove("transformed");
+        
+    }};
