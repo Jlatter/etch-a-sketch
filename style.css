@@ -1,39 +1,58 @@
-
+body{
+    background-color: blueviolet;
+}
 :root{
     --grid-row:1;
     --grid-height:1;
 }
 .container{
-    display: flex;
+    flex-direction: column;
 
 }
 #contain{
+    text-align: center;
     display: grid;
-   padding-left: 55em;
-   padding-right: 15em;
+   padding-left: 18em;
+   padding-right: 18em;
    padding-top: 5em;
+   padding-bottom: 5em;
+   height: 554px;
+   width: 554px;
     grid-template-rows: repeat(var(--grid-row), 1fr);
     grid-template-columns: repeat(var(--grid-height), 1fr);
+    background-color: aqua;
+    border-right: 23em;
+    margin-left:25em;
+    margin-right:5em;
+    border-radius: 40px;
 }
 .grid-item{
-    padding: 1em;
+    padding: auto;
     border: 1px solid #ddd;
     text-align: center;
+    background-color: white;
 }
 .colour-grid{
    background-color: blue;
 }
 .transformed{
     background-color: black;
-    padding: 1em;
+    padding: auto;
     border: 1px solid;
     text-align: center;
 }
 .mains{
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+   
 }
 #option{
 width: 70px;
 height: 20px;
+}
+.mains{
+    text-align: center;
+}
+.active{
+    background-color: blue;
 }
