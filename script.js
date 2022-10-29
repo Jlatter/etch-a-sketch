@@ -1,7 +1,7 @@
 
 const container = document.getElementById("contain");
 var gridItems = document.getElementsByClassName("grid-item");
-
+var numcount = 0;
 var pix =  document.getElementById("myRange");
 var output = document.getElementById("demo");
 console.log(pix.value)
@@ -27,7 +27,7 @@ for(let i =0; i<(row * height); i++){
 };
 for(let i=0;i<gridItems.length;i++){
     gridItems[i].setAttribute("id", "pixel"+i);
-}
+};
 for(let i=0; i<gridItems.length; i++){
     document.getElementById("pixel" +i).addEventListener("mouseenter", event => cool(i));
 };
@@ -41,6 +41,10 @@ function cool(e){
     document.getElementById("pixel" + e).className ="grid-item transformed";
     
 };
+function notcool(e){
+    console.log("indoa" +(e+1));
+    document.getElementById("pixel" + e).className ="grid-item";
+};
 const clear = document.getElementById("option");
 clear.addEventListener("click", event => cleared());
 function cleared(){
@@ -49,6 +53,18 @@ function cleared(){
         document.getElementById("pixel"+i).classList.remove("transformed");
         
     }};
+    const eraserConst= document.getElementById("eraser");
+    eraserConst.addEventListener("click", e => eraser());
+    
 function eraser(){
-    document.getElementById("eraser").className ="eraser active"
-}
+    numcount++;
+    console.log(numcount);
+    if(numcount%2 ===0){eraserConst.className="eraser";
+    for(let i=0; i<gridItems.length; i++){
+        document.getElementById("pixel" +i).addEventListener("mouseenter", event => cool(i));
+    };}
+   else{document.getElementById("eraser").className ="eraser active";
+   for(let i=0; i<gridItems.length; i++){
+    document.getElementById("pixel" +i).addEventListener("mouseenter", event => notcool(i));
+};};
+};
